@@ -16,13 +16,6 @@
 		}
 	  },
 	  {
-		"step": "installPlugin",
-		"pluginData": {
-		  "resource": "url",
-		  "url": "https://raw.githubusercontent.com/vladmirom/valve-blocks-playground/refs/heads/main/sharing/zips/valve-blocks.zip"
-		}
-	  },
-	  {
 		"step": "createPage",
 		"title": "Sharing block demo",
 		"content": "<!-- wp:paragraph -->\n<p>This is the page to show the demo for sharing block.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:valveblock/sharing -->\n<div class=\"wp-block-valveblock-sharing\"></div>\n<!-- /wp:valveblock/sharing -->",
