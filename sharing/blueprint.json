@@ -1,45 +1,28 @@
 {
 	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
 	"preferredVersions": {
-	  "php": "latest",
-	  "wp": "latest"
+		"php": "latest",
+		"wp": "latest"
 	},
 	"siteOptions": {
-	  "blogname": "Valve Sharing Block Demo"
+		"blogname": "Valve Sharing Block Demo"
 	},
 	"steps": [
-	  {
-		"step": "installTheme",
-		"themeData": {
-		  "resource": "url",
-		  "url": "https://raw.githubusercontent.com/vladmirom/valve-blocks-playground/refs/heads/main/sharing/zips/twentytwentyfive.zip"
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/vladmirom/valve-blocks-playground/refs/heads/main/sharing/zips/twentytwentyfive.zip"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php\nrequire_once 'wordpress/wp-load.php';\n\n$page_args = array(\n  'post_type'    => 'page',\n  'post_status'  => 'publish',\n  'post_title'   => 'Sharing block demo',\n  'post_name'    => 'sharing-block-demo',\n  'post_content' => '<!-- wp:paragraph -->\n<p>This is the page to show the demo for sharing block.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:valveblock/sharing {\"mainColor\":\"#503AA8\",\"hoverColor\":\"#F6CFF4\",\"enableHover\":true,\"selectedSharingMethods\":[{\"id\":\"3cbf66a9-42b5-4060-9842-f6193002ccc6\",\"option\":\"link\",\"url\":\"#\"},{\"id\":\"a4a30f13-9307-4afc-b071-d2e66a053ee5\",\"option\":\"facebook\",\"url\":\"#\"},{\"id\":\"a1ec5349-7b7d-48e9-a059-de3d28a71999\",\"option\":\"linkedin\",\"url\":\"#\"},{\"id\":\"7a9bea07-0624-4ed1-9c6f-9b9e4ea0a18d\",\"option\":\"x\",\"url\":\"#\"}],\"className\":\"wp-block-valveblock-sharing\"} /-->',\n);\n\n$page_id = wp_insert_post($page_args);\nupdate_option('page_on_front', $page_id);\nupdate_option('show_on_front', 'page');"
 		}
-	  },
-	  {
-		"step": "createPage",
-		"page": {
-		  "title": "Sharing block demo",
-		  "status": "publish",
-		  "slug": "sharing-block-demo",
-		  "content": [
-			"<!-- wp:paragraph {\"style\":{\"spacing\":{\"margin\":{\"bottom\":\"var:preset|spacing|50\"}}}} -->",
-			"<p style=\"margin-bottom:var(--wp--preset--spacing--50)\">This is the page to show the demo for sharing block.</p>",
-			"<!-- /wp:paragraph -->",
-			"",
-			"<!-- wp:valveblock/sharing {\"mainColor\":\"#503AA8\",\"hoverColor\":\"#F6CFF4\",\"enableHover\":true,\"selectedSharingMethods\":[{\"id\":\"3cbf66a9-42b5-4060-9842-f6193002ccc6\",\"option\":\"link\",\"url\":\"#\"},{\"id\":\"a4a30f13-9307-4afc-b071-d2e66a053ee5\",\"option\":\"facebook\",\"url\":\"#\"},{\"id\":\"a1ec5349-7b7d-48e9-a059-de3d28a71999\",\"option\":\"linkedin\",\"url\":\"#\"},{\"id\":\"7a9bea07-0624-4ed1-9c6f-9b9e4ea0a18d\",\"option\":\"x\",\"url\":\"#\"}],\"className\":\"wp-block-valveblock-sharing\"} /-->"
-		  ]
-		}
-	  },
-	  {
-		"step": "setSiteOptions",
-		"options": {
-		  "show_on_front": "page",
-		  "page_on_front": "sharing-block-demo"
-		}
-	  }
 	],
 	"features": {
-	  "networking": true
+		"networking": true
 	},
-	"login": true
-  }
+	"login": true,
+	"landingPage": "/sharing-block-demo"
+}
