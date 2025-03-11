@@ -16,13 +16,8 @@
 		}
 	  },
 	  {
-		"step": "createPage",
-		"page": {
-		  "title": "Sharing block demo",
-		  "content": "<!-- wp:paragraph -->\n<p>This is the page to show the demo for sharing block.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:valveblock/sharing -->\n<div class=\"wp-block-valveblock-sharing\"></div>\n<!-- /wp:valveblock/sharing -->",
-		  "status": "publish",
-		  "slug": "sharing-block-demo"
-		}
+		"step": "runPHP",
+		"code": "<?php require_once 'wordpress/wp-load.php';\n$page_args = array(\n'post_type'    => 'page',\n'post_status'  => 'publish',\n'post_title'   => 'Sharing block demo',\n'post_content' => '<!-- wp:paragraph -->\\n<p>This is the page to show the demo for sharing block.</p>\\n<!-- /wp:paragraph -->\\n\\n<!-- wp:valveblock/sharing -->\\n<div class=\\\"wp-block-valveblock-sharing\\\"></div>\\n<!-- /wp:valveblock/sharing -->',\n);\n$page_id = wp_insert_post( $page_args );update_option( 'page_on_front', $page_id );update_option( 'show_on_front', 'page' );"
 	  }
 	],
 	"features": {
