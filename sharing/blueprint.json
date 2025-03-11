@@ -1,0 +1,24 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"preferredVersions": {
+		"php": "latest",
+		"wp": "latest"
+	},
+	"siteOptions": {
+		"blogname": "Valve Sharing Block Demo"
+	},
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeZipFile": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/valvebranding/valve-blocks/main/playground/sharing/zips/valve-theme.zip"
+			}
+		}
+	],
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"landingPage": "/?p=4"
+}
