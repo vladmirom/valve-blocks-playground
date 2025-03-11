@@ -10,9 +10,9 @@
 	"steps": [
 		{
 			"step": "installTheme",
-			"themeZipFile": {
+			"themeData": {
 				"resource": "url",
-				"url": "https://raw.githubusercontent.com/valvebranding/valve-blocks/main/playground/sharing/zips/valve-theme.zip"
+				"url": "https://raw.githubusercontent.com/vladmirom/valve-blocks-playground/refs/heads/main/sharing/zips/valve-theme.zip"
 			}
 		}
 	],
