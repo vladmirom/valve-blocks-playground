@@ -17,7 +17,7 @@
 		},
 		{
 			"step": "runPHP",
-			"code": "<?php\\nrequire_once '/wordpress/wp-load.php';\\n\\necho 'WordPress loaded successfully!';\\necho '\\nSite name: ' . get_option('blogname');"
+			"code": "<?php\\nrequire_once 'wordpress/wp-load.php';\\n\\necho 'WordPress loaded successfully!';\\necho '\\nSite name: ' . get_option('blogname');"
 		}
 	],
 	"features": {

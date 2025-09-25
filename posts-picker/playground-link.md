@@ -1,1 +1,1 @@
-Copy this link to your browser and let the magic happen: https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/vladmirom/valve-blocks-playground/refs/heads/main/posts-picker/blueprint.json&v=3
+Copy this link to your browser and let the magic happen: https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/vladmirom/valve-blocks-playground/refs/heads/main/posts-picker/blueprint.json&v=5
